@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>福纳丝第二阶段</title>
+        <link rel="stylesheet" type="text/css" href="./index.css"/>
+    </head>
+    <body>
+        <div class="content">
+            <a href="upload.html" class="upload-bt"></a>
+            <div class="tabs">
+                <div id="all-tab" class="all-tab tab-selected"></div>
+                <div id="my-tab" class="my-tab"></div>
+            </div>
+            <div class="user-select-info">
+                <div class="ticket-info">
+                    <span>您的剩余票数：</span>
+                    <span class="ticket-count">00</span>
+                    <span>票</span>
+                </div>
+                <div class="ticket-rule" onclick="showVoteRule()"></div>
+            </div>
+            <div class="works">
+                <div class="work-item">
+                    <img class="work-pic" src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                    <div class="work-item-line">
+                    </div>
+                    <div class="work-user oneline">
+                        <img src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                        <span>叽里咕噜</span>
+                    </div>
+                    <div class="work-desc twoline">
+                        试试文字多的时候试试文字多的时候试试文字多的时候试试文字多的时候
+                    </div>
+                    <div class="work-sub-ticket">
+                        <div class="hasticket-count">564655票</div>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img class="work-pic" src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                    <div class="work-item-line">
+                    </div>
+                    <div class="work-user oneline">
+                        <img src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                        <span>叽里咕噜</span>
+                    </div>
+                    <div class="work-desc twoline">
+                        试试文字多的时候试试文字多的时候试试文字多的时候试试文字多的时候
+                    </div>
+                    <div class="work-sub-ticket">
+                        <div class="hasticket-count">564655票</div>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img class="work-pic" src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                    <div class="work-item-line">
+                    </div>
+                    <div class="work-user oneline">
+                        <img src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                        <span>叽里咕噜</span>
+                    </div>
+                    <div class="work-desc twoline">
+                        试试文字多的时候试试文字多的时候试试文字多的时候试试文字多的时候
+                    </div>
+                    <div class="work-sub-ticket">
+                        <div class="hasticket-count">564655票</div>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img class="work-pic" src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                    <div class="work-item-line">
+                    </div>
+                    <div class="work-user oneline">
+                        <img src="http://t13.baidu.com/it/u=2104437955,1661276021&fm=224&app=112&f=JPEG?w=500&h=500&s=FD82CF1C7D0252CC3A452CCB03007030"/>
+                        <span>叽里咕噜</span>
+                    </div>
+                    <div class="work-desc twoline">
+                        试试文字多的时候试试文字多的时候试试文字多的时候试试文字多的时候
+                    </div>
+                    <div class="work-sub-ticket">
+                        <div class="hasticket-count">564655票</div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-bar">
+                <div class="page-pre page-act-disabled"></div>
+                <div class="current-page">1/30</div>
+                <div class="page-next"></div>
+            </div>
+        </div>
+        <div class="act-rule-btn" onclick="showRule()"></div>
+        <div id="act-rule">
+            <div class="act-rule-title">
+                <div class="act-rule-close" onclick="hideRule()"></div>
+            </div>
+            <div class="act-rule-info"></div>
+        </div>
+        <div id="vote-rule">
+            <div class="" onclick="hideVoteRule()">关闭投票按钮</div>
+            投票规则
+        </div>
+        <script src="flexible.js"></script>
+        <script>
+            function showRule(){
+                document.getElementById("act-rule").className="show-rule"
+            }
+            function hideRule(){
+                document.getElementById("act-rule").className=""
+            }
+            function showVoteRule(){
+                document.getElementById("vote-rule").className="show-rule"
+            }
+            function hideVoteRule(){
+                document.getElementById("vote-rule").className=""
+            }
+        </script>
+    </body>
+</html>

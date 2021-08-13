@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>寻找福纳丝环保新生</title>
+        <link rel="stylesheet" type="text/css" href="./index.css"/>
+    </head>
+    <body>
+        <div id="titlecontent">
+            <input id="title" onchange="checkTitle()" onkeyup="resizeTitle()" placeholder="编辑标题（不少于5个字）~" minlength="5" maxlength="16"/>
+            <div class="inputcount">
+                <span id="titlelength">0</span>/16字
+            </div>
+        </div>
+        <div id="desccontent">
+            <textarea id="desc" onchange="checkDesc()" onkeyup="resizeDesc()" placeholder="填写游记详情（不少于20个字，内容越多，越有机会获得优质游记奖哦）~" minlength="20" maxlength="200"></textarea>
+            <div class="inputcount">
+                <span id="desclength">0</span>/200字
+            </div>
+        </div>
+        <div class="uploadcontent">
+            <div id="imgs">
+            </div>
+            <div id="uploadbt" onclick="onupload()">上传</div>
+        </div>
+        <div class=""></div>
+        <div class="sub" onclick="submit()">
+            立即发布
+        </div>
+        <script src="flexible.js"></script>
+        <script>
+            // 列出常用dom节点
+            var doms = {
+                titlecontent:document.getElementById("titlecontent"),
+                desccontent:document.getElementById("desccontent"),
+                title:document.getElementById("title"),
+                desc:document.getElementById("desc"),
+                titlelength:document.getElementById("titlelength"),
+                desclength:document.getElementById("desclength"),
+                imgs:document.getElementById("imgs"),
+                uploadbt:document.getElementById("uploadbt")
+            }
+            var validate = {
+                title: function(){
+                    var l = doms.title.value.length
+                    if(l>=5&&l<=16){
+                        return true
+                    }else{
+                        return false
+                    }
+                },
+                desc:function(){
+                    var l = doms.desc.value.length
+                    if(l>=20&&l<=200){
+                        return true
+                    }else{
+                        return false
+                    }
+                }
+            }
+            var imgs = []
+            function resizeTitle(){
+                doms.titlelength.innerHTML=doms.title.value.length
+            }
+            function checkTitle(){
+                doms.titlecontent.className = validate.title()?'':'warning-style'
+            }
+            function resizeDesc(){
+                doms.desclength.innerHTML=doms.desc.value.length
+            }
+            function checkDesc(){
+                doms.desccontent.className = validate.desc()?'':'warning-style'
+            }
+            //上传成功后交互
+            function onupload(img){
+                img = 'https://www.baidu.com/img/flexible/logo/pc/result.png'
+                imgs.push(img)
+                doms.imgs.innerHTML = doms.imgs.innerHTML+`
+                <div class="imgbox">
+                    <div class="" onclick="removeImg(event)">删除</div>
+                    <img src="${img}"/>
+                </div>
+                `
+                checkUploadBt()
+            }
+            function checkUploadBt(){
+                doms.uploadbt.style.display=imgs.length>=3?'none':'block'
+            }
+            function removeImg(e){
+                var box = e.target.parentNode
+                var parent = box.parentNode
+                var boxs = parent.getElementsByClassName("imgbox")
+                var index = Array.prototype.indexOf.call(boxs,box)
+                parent.removeChild(box)
+                imgs.splice(index,1)
+                checkUploadBt()
+            }
+        </script>
+    </body>
+</html>
